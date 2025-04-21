@@ -79,6 +79,9 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        $article->delete();
+        if ($article) {
+            $article->delete();
+        }
+        return redirect()->route('articles.index')->with('success', 'Статья удалена!');
     }
 }
