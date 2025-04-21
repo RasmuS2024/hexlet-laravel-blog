@@ -1,15 +1,5 @@
 @extends('layouts.app')
 
-@if ($errors->any())
-    <div>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
 @if(session()->has('success'))
   <div class="alert alert-success  role="alert>
     {{ session()->get('success') }}
